@@ -51,9 +51,9 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///opt/homebrew/Caskroom/flutter/2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
+      "rootUri": "file:///opt/homebrew/Caskroom/flutter/2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "cupertino_icons",
@@ -70,6 +70,12 @@
     {
       "name": "flutter",
       "rootUri": "file:///opt/homebrew/Caskroom/flutter/2.2.3/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///opt/homebrew/Caskroom/flutter/2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.9.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -230,7 +236,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-27T14:38:47.952847Z",
+  "generated": "2022-04-28T08:10:24.106020Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }
