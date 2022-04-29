@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.endpoint_market">
+    package="com.example.ttangkkeusmarket">
    <application
         android:label="땅끗마켓"
         android:name="${applicationName}"
