@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ttangkkeusmarket/widgets/bottom_navbar.dart';
 
 void main() {
@@ -10,6 +11,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyBottomNavBar());
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Color(0xF6C544)),
+      home: MyBottomNavBar(),
+    );
   }
 }
+
+
+
+
+// class Appbar extends StatelessWidget {
+//   const Appbar({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: BaseAppBar(),
+//     );
+//   }
+// }
+

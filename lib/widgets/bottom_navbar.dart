@@ -3,7 +3,7 @@ import 'package:ttangkkeusmarket/screens/home.dart';
 import 'package:ttangkkeusmarket/screens/category.dart';
 import 'package:ttangkkeusmarket/screens/search.dart';
 import 'package:ttangkkeusmarket/screens/mypage.dart';
-
+import 'package:ttangkkeusmarket/widgets/AppBar.dart';
 
 class MyBottomNavBar extends StatefulWidget {
   MyBottomNavBar({Key? key}) : super(key: key);
@@ -31,9 +31,8 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Bottom Nav bar"),
-      ),
+      //   title: const Text("Bottom Nav bar"),
+      // ),
       body: _screens[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -53,7 +52,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
             label: '검색',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outline),
             label: '마이페이지',
           ),
         ],
