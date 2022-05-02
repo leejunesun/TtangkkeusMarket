@@ -96,9 +96,20 @@ flutter:
         - asset: assets/fonts/SF-Pro.ttf
     - family: NotoSans
       fonts:
-        - asset: assets/fonts/NotoSansCJKKr-Medium.otf
+        - asset: assets/fonts/NotoSansCJKKr-Black.otf
+          weight: 900
         - asset: assets/fonts/NotoSansCJKKr-Bold.otf
           weight: 700
+        - asset: assets/fonts/NotoSansCJKKr-Medium.otf
+          weight: 500
+        - asset: assets/fonts/NotoSansCJKKr-Regular.otf
+          weight: 400
+        # - asset: assets/fonts/NotoSansCJKKr-DemiLight.otf
+        #   weight: 350
+        - asset: assets/fonts/NotoSansCJKKr-Light.otf
+          weight: 300
+        - asset: assets/fonts/NotoSansCJKKr-Thin.otf
+          weight: 100
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
