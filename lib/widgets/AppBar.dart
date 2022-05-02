@@ -12,12 +12,14 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Color(0xffffffff),
+      elevation: 0.0,
       actions: [
         IconButton(
           onPressed: () => {
             // do something
           },
-          icon: const Icon(Icons.shopping_cart_outlined),
+          icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
         )
       ],
       centerTitle: center,
