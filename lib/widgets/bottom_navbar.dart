@@ -3,10 +3,9 @@ import 'package:ttangkkeusmarket/screens/home.dart';
 import 'package:ttangkkeusmarket/screens/category.dart';
 import 'package:ttangkkeusmarket/screens/search.dart';
 import 'package:ttangkkeusmarket/screens/mypage.dart';
-import 'package:ttangkkeusmarket/widgets/AppBar.dart';
 
 class MyBottomNavBar extends StatefulWidget {
-  MyBottomNavBar({Key? key}) : super(key: key);
+  const MyBottomNavBar({Key? key}) : super(key: key);
 
   @override
   State<MyBottomNavBar> createState() => _MyBottomNavBarState();
@@ -35,6 +34,8 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       // ),
       body: _screens[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Color(0xFF161921),
+        selectedItemColor: Color(0xFFF6C544),
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectIndex,
         onTap: _navigateBottomBar,

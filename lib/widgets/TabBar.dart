@@ -16,6 +16,7 @@ class MainTabBar extends StatelessWidget {
           TabBar(
             indicatorColor: Color(0xff000000),
             indicatorWeight: 2.5,
+            indicatorSize: TabBarIndicatorSize.label,
             tabs: [
               Tab(
                 child: Text(
