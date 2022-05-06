@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ttangkkeusmarket/screens/recommend.dart';
 import 'package:ttangkkeusmarket/screens/newitem.dart';
 import 'package:ttangkkeusmarket/screens/bestitem.dart';
@@ -19,14 +20,13 @@ class MainTabBar extends StatelessWidget {
             indicatorSize: TabBarIndicatorSize.label,
             tabs: [
               Tab(
-                child: Text(
-                  "추천",
-                  style: TextStyle(
+                child: Text("추천",
+                    style: TextStyle(
                       color: Color(0xff000000),
                       fontFamily: 'NotoSans',
                       fontSize: 18.0,
-                      fontWeight: FontWeight.w400),
-                ),
+                      fontWeight: FontWeight.w400,
+                    )),
               ),
               Tab(
                 child: Text(
