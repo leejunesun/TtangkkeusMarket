@@ -18,9 +18,9 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
             items: [
               //1st Image of Slider
               Container(
-                margin: EdgeInsets.all(6.0),
+                // margin: EdgeInsets.all(0.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
+                  // borderRadius: BorderRadius.circular(8.0),
                   color: Colors.red,
                   // image: DecorationImage(
                   //   image: NetworkImage("ADD IMAGE URL HERE"),
@@ -31,9 +31,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
               //2nd Image of Slider
               Container(
-                margin: EdgeInsets.all(6.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
                   color: Colors.blue,
                   // image: DecorationImage(
                   //   image: NetworkImage("ADD IMAGE URL HERE"),
@@ -44,9 +42,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
               //3rd Image of Slider
               Container(
-                margin: EdgeInsets.all(6.0),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
                     color: Colors.green
                     // image: DecorationImage(
                     //   image: NetworkImage("ADD IMAGE URL HERE"),
@@ -57,9 +53,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
               //4th Image of Slider
               Container(
-                margin: EdgeInsets.all(6.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
                   color: Colors.amber,
                   // image: DecoraionImage(
                   //   image: NetworkImage("ADD IMAGE URL HERE"),
@@ -70,9 +64,8 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
               //5th Image of Slider
               Container(
-                margin: EdgeInsets.all(6.0),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0), color: Colors.pink
+                    color: Colors.pink,
                     // image: DecorationImage(
                     //   image: NetworkImage("ADD IMAGE URL HERE"),
                     //   fit: BoxFit.cover,
@@ -83,14 +76,13 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
             //Slider Container properties
             options: CarouselOptions(
-              height: 180.0,
-              enlargeCenterPage: true,
+              height: 360.0,
+              // enlargeCenterPage: true,
               autoPlay: true,
               aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
               enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
+              autoPlayInterval: Duration(seconds: 10),
+              viewportFraction: 1,
             ),
           ),
         ],
