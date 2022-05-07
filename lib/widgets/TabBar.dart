@@ -13,9 +13,10 @@ class MainTabBar extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
         body: Column(children: const [
           TabBar(
-            indicatorColor: Color(0xff000000),
+            indicatorColor: Color(0xFF000000),
             indicatorWeight: 2.5,
             indicatorSize: TabBarIndicatorSize.label,
             tabs: [
