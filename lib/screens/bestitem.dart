@@ -5,12 +5,14 @@ class BestitemTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: const Center(
-        child: Text(
-          "BESTITEM TAB",
-          style: TextStyle(fontSize: 24, color: Colors.white),
+    return Scaffold(
+      body: Container(
+        color: Colors.red,
+        child: const Center(
+          child: Text(
+            "BESTITEM TAB",
+            style: TextStyle(fontSize: 24, color: Colors.white),
+          ),
         ),
       ),
     );
