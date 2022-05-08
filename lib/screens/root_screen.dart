@@ -4,14 +4,14 @@ import 'package:ttangkkeusmarket/screens/category.dart';
 import 'package:ttangkkeusmarket/screens/search.dart';
 import 'package:ttangkkeusmarket/screens/mypage.dart';
 
-class MyBottomNavBar extends StatefulWidget {
-  const MyBottomNavBar({Key? key}) : super(key: key);
+class RootScreen extends StatefulWidget {
+  const RootScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyBottomNavBar> createState() => _MyBottomNavBarState();
+  State<RootScreen> createState() => _RootScreenState();
 }
 
-class _MyBottomNavBarState extends State<MyBottomNavBar> {
+class _RootScreenState extends State<RootScreen> {
   int _selectIndex = 0;
 
   void _navigateBottomBar(int index) {

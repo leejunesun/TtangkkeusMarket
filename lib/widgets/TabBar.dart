@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ttangkkeusmarket/screens/recommend.dart';
 import 'package:ttangkkeusmarket/screens/newitem.dart';
 import 'package:ttangkkeusmarket/screens/bestitem.dart';

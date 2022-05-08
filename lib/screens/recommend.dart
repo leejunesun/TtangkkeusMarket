@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ttangkkeusmarket/widgets/CarouselList.dart';
+import 'package:ttangkkeusmarket/widgets/carousel_list.dart';
+import 'package:ttangkkeusmarket/widgets/list_item.dart';
 
 class RecommendTab extends StatelessWidget {
   const RecommendTab({Key? key}) : super(key: key);
@@ -7,8 +8,16 @@ class RecommendTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CarouselSliderWidget(),
-
+      body: Column(
+        children: [
+          Expanded(
+            child: CarouselSliderWidget()
+          ),
+          Expanded(
+            child: ListItems()
+            ),
+        ],
+      ),
     );
     // return Container(
     //   color: Colors.orange,
