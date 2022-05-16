@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ttangkkeusmarket/src/widgets/appbar.dart';
+import 'package:ttangkkeusmarket/widgets/appbar.dart';
 
 class MypageScreen extends StatelessWidget {
   const MypageScreen({Key? key}) : super(key: key);
