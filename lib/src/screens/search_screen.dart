@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ttangkkeusmarket/widgets/appbar.dart';
+import 'package:ttangkkeusmarket/src/widgets/appbar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
