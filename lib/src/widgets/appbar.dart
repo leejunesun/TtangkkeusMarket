@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar(
@@ -19,7 +20,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () => {
             // do something
           },
-          icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
+          icon: Icon(
+            LineIcons.shoppingCart,
+            size: 32.0,
+            color: Colors.black,
+          ),
         )
       ],
       centerTitle: center,
