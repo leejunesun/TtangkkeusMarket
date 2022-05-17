@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
+import 'package:line_icons/line_icons.dart';
+
 import 'package:ttangkkeusmarket/src/providers/bottom_nav_provider.dart';
 import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/category_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/search_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class CustomNavBar extends StatelessWidget {
+  const CustomNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class Home extends StatelessWidget {
       return BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(LineIcons.home),
             label: '홈',
           ),
           BottomNavigationBarItem(
@@ -40,7 +43,7 @@ class Home extends StatelessWidget {
             label: '카테고리',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(LineIcons.search),
             label: '검색',
           ),
           BottomNavigationBarItem(
