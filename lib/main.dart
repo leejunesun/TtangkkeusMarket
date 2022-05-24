@@ -7,8 +7,7 @@ import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
 import 'package:ttangkkeusmarket/src/navbar.dart';
 import 'package:ttangkkeusmarket/src/providers/bottom_nav_provider.dart';
 
-import 'src/screens/login_screen.dart';
-import 'wrapper.dart';
+import 'src/screens/register_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,21 +22,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color(0xFFF6C544),
-      ),
-      home: MultiProvider(providers: [
-        ChangeNotifierProvider(
-            create: (BuildContext context) => BottomNavigationProvier()),
-      ], child: CustomNavBar()),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => Wrapper(),
-      //   '/login': (context) => LoginScreen(),
-      // }
-      // '/register': (context) => RegisterScreen(),
-    );
+    return MultiProvider(
+        providers: [
+          Provider<AuthService>(
+            create: (_) => AuthService(),
+          ),
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primaryColor: Color(0xFFF6C544),
+          ),
+          initialRoute: '/',
+          routes: {
+            // '/': (context) => CustomNavBar(),
+            '/register': (context) => RegisterScreen(),
+          },
+          home: MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                  create: (BuildContext context) => BottomNavigationProvier()),
+            ],
+            child: CustomNavBar(),
+          ),
+        ));
   }
 }

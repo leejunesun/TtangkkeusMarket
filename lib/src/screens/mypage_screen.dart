@@ -22,7 +22,7 @@ class MypageScreen extends StatelessWidget {
                       Navigator.of(context).push(_loginRoute());
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFF6C544),
+                      primary: const Color(0xFFF6C544),
                       elevation: 0.0,
                       shadowColor: Colors.transparent,
                     ),
