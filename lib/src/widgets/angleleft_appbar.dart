@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
-class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const LoginAppBar(
+class AngleLeftAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const AngleLeftAppBar(
       {Key? key, required this.appBar, required this.title, this.center = true})
       : super(key: key);
 
@@ -16,7 +16,7 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       leading: IconButton(
-        icon: Icon(LineIcons.times),
+        icon: const Icon(LineIcons.angleLeft),
         iconSize: 32.0,
         color: Colors.black,
         onPressed: () => Navigator.of(context).pop(),
@@ -24,11 +24,12 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: center,
       title: Text(
         "$title",
-        style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'SF',
-            fontSize: 24.0,
-            fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          color: Colors.black,
+          fontFamily: 'SF',
+          fontSize: 24.0,
+          fontWeight: FontWeight.w700,
+        ),
       ),
     );
   }

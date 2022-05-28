@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/text/repetitious_text.dart';
 import 'package:ttangkkeusmarket/src/widgets/carousel_list.dart';
-import 'package:ttangkkeusmarket/src/widgets/list_item.dart';
+import 'package:ttangkkeusmarket/src/widgets/item_list.dart';
 
 class RecommendTab extends StatelessWidget {
   const RecommendTab({Key? key}) : super(key: key);
