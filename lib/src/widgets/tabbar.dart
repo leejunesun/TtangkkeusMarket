@@ -12,6 +12,7 @@ class MainTabBar extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xFFFFFFFF),
         body: Column(children: const [
           TabBar(

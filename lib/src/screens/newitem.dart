@@ -6,14 +6,15 @@ class NewitemTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.green,
-      child: const Center(
-        child: Text(
-          "NEWITEM TAB",
-          style: TextStyle(fontSize: 24, color:Colors.white),
+        child: const Center(
+          child: Text(
+            "NEWITEM TAB",
+            style: TextStyle(fontSize: 24, color: Colors.white),
+          ),
         ),
-      ),
       ),
     );
   }

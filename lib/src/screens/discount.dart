@@ -6,6 +6,7 @@ class DiscountTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.blue,
         child: const Center(

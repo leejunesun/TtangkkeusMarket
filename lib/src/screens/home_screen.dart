@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
 import 'package:ttangkkeusmarket/src/widgets/base_appbar.dart';
 import 'package:ttangkkeusmarket/src/widgets/tabbar.dart';
 
@@ -8,8 +9,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // bottomNavigationBar: const MyBottomNavBar(),
-        appBar: BaseAppBar(appBar: AppBar(), title: "땅끗마켓", center: true),
-        body: const MainTabBar());
+      resizeToAvoidBottomInset: false,
+      // bottomNavigationBar: const MyBottomNavBar(),
+      appBar: BaseAppBar(appBar: AppBar(), title: "땅끗마켓", center: true),
+      body: const MainTabBar(),
+    );
   }
 }

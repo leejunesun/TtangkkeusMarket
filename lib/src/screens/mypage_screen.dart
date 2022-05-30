@@ -9,6 +9,7 @@ class MypageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: BaseAppBar(appBar: AppBar(), title: "마이페이지", center: true),
         body: Center(
           child: Column(
@@ -22,7 +23,7 @@ class MypageScreen extends StatelessWidget {
                       Navigator.of(context).push(_loginRoute());
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFFF6C544),
+                      primary: Color(0xFFF6C544),
                       elevation: 0.0,
                       shadowColor: Colors.transparent,
                     ),

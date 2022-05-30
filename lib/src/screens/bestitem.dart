@@ -6,6 +6,7 @@ class BestitemTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.red,
         child: const Center(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/text/repetitious_text.dart';
 import 'package:ttangkkeusmarket/src/widgets/carousel_list.dart';
-import 'package:ttangkkeusmarket/src/widgets/item_list.dart';
+import 'package:ttangkkeusmarket/src/widgets/list_item.dart';
 
 class RecommendTab extends StatelessWidget {
   const RecommendTab({Key? key}) : super(key: key);
@@ -9,6 +9,7 @@ class RecommendTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Expanded(child: CarouselSliderWidget()),
