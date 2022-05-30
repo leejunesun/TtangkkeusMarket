@@ -7,6 +7,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: BaseAppBar(appBar: AppBar(), title: "카테고리", center: true),
       body: Center(
           child: Text(

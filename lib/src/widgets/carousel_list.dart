@@ -15,6 +15,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
     final currentHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: ListView(
         children: [
           CarouselSlider(

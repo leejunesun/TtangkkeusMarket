@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
 import 'package:ttangkkeusmarket/src/widgets/custom_button.dart';
-
+import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
+import 'package:provider/provider.dart';
 import '../widgets/angleleft_appbar.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
+import 'package:get/get.dart';
+import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+import 'package:ttangkkeusmarket/Phone/auth_phone.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ttangkkeusmarket/src/models/user.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -12,11 +23,18 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _auth = FirebaseAuth.instance;
+  final TextEditingController confirmpasswordController =
+      TextEditingController();
+  final TextEditingController useridController = TextEditingController();
+  final TextEditingController NameEditingController = TextEditingController();
+  String? errorMessage;
+
   @override
   Widget build(BuildContext context) {
+    AuthController authController = AuthController();
     final currentWdith = MediaQuery.of(context).size.width;
     final currentHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AngleLeftAppBar(
         appBar: AppBar(),
@@ -64,6 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: 235.0,
                     height: 35.0,
                     child: TextFormField(
+                      controller: useridController,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                         enabledBorder: OutlineInputBorder(
@@ -153,6 +172,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWdith,
                 // height: 35.0,
                 child: TextFormField(
+                  controller: authController.passwordController,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                     enabledBorder: OutlineInputBorder(
@@ -205,6 +225,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWdith,
                 // height: 35.0,
                 child: TextFormField(
+                  controller: confirmpasswordController,
+                  validator: (value) {
+                    if (authController.passwordController !=
+                        authController.confirmpasswordController) {
+                      return "password don't match";
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                     enabledBorder: OutlineInputBorder(
@@ -258,6 +286,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWdith,
                 // height: 35.0,
                 child: TextFormField(
+                  controller: NameEditingController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return ("Name cannor be Empty");
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                     enabledBorder: OutlineInputBorder(
@@ -311,6 +346,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWdith,
                 // height: 35.0,
                 child: TextFormField(
+                  controller: authController.emailController,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                     enabledBorder: OutlineInputBorder(
@@ -553,7 +589,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 50.0),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  authController.createAcoount();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
                 buttonText: '가입하기',
                 buttonColor: Color(0xFFF6C544),
                 borderRadius: 5.0,
