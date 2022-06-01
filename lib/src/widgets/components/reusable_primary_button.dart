@@ -14,17 +14,18 @@ class ReusablePrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width: MediaQuery.of(context).size.width / 1.3,
+        width: MediaQuery.of(context).size.width - 40,
         decoration: BoxDecoration(
-          color: Colors.deepPurple,
-          borderRadius: BorderRadius.circular(20),
+          color: const Color(0xFFF6C544),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: Center(
           child: Text(
             buttonText,
-            style: TextStyle(
-              color: Colors.white,
+            style: const TextStyle(
+              color: Color(0xFF161921),
               fontSize: 16,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
