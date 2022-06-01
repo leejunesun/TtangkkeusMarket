@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_cotrol.dart';
 import 'package:ttangkkeusmarket/src/widgets/base_appbar.dart';
 import 'package:ttangkkeusmarket/src/widgets/tabbar.dart';
 

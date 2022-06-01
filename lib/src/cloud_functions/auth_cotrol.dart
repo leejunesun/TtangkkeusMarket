@@ -1,13 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
-import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
-import 'package:ttangkkeusmarket/src/widgets/tabbar.dart';
+
+import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthController extends GetxController {
   //sign up text editing controllers
