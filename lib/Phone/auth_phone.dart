@@ -25,7 +25,7 @@ class _PhoneAuthTestState extends State<PhoneAuthTest> {
   bool requestedAuth = false;
 
   bool showLoading = false;
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   void signInWithPhoneAuthCredential(
       PhoneAuthCredential phoneAuthCredential) async {
     setState(() {

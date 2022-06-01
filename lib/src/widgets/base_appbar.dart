@@ -20,7 +20,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () => {
             // do something
           },
-          icon: Icon(
+          icon: const Icon(
             LineIcons.shoppingCart,
             size: 32.0,
             color: Colors.black,
@@ -30,7 +30,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: center,
       title: Text(
         "$title",
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.black,
             fontFamily: 'SF',
             fontSize: 24.0,
