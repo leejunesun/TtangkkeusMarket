@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_cotrol.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_control.dart';
 
 import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     AuthController authController = AuthController();
-    final currentWdith = MediaQuery.of(context).size.width;
+    final currentWidth = MediaQuery.of(context).size.width;
     final currentHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -75,12 +75,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   // ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    width: currentWdith / 1.65,
+                    width: currentWidth / 1.65,
                     // width: 235.0,
                     // height: 40.0,
                     child: ReusableTextField(
+                      key: ValueKey(3),
+                      validator: (value) {
+                        if(value!.isEmpty || value.length < 6) {
+                          return 'Please enter at least 6 charters';
+                        }
+                        return null;
+                      },
                       controller: useridController,
-
                       hintText: "예: ttangkkeus12",
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
@@ -89,7 +95,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
                   Container(
-                    width: currentWdith / 3.8,
+                    width: currentWidth / 3.8,
                     // height: 50.0,
                     // child: Expanded(
                     child: OutlinedButton(
@@ -103,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-                          currentWdith / 1.9,
+                          currentWidth / 1.9,
                           currentHeight / 17.5,
                         ),
                       ),
@@ -149,10 +155,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
               // const Padding(padding: EdgeInsets.only(right: 20)),
               Container(
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                width: currentWdith,
+                width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(4),
                   controller: authController.passwordController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter the password';
+                    }
+                    return null;
+                  },
                   hintText: "비밀번호를 입력해주세요.",
                 ),
               ),
@@ -184,9 +197,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 5.0),
               Container(
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                width: currentWdith,
+                width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(5),
                   controller: confirmpasswordController,
                   validator: (value) {
                     if (authController.passwordController !=
@@ -195,7 +209,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                     return null;
                   },
-                  hintText: "비밀번호를 입력해주세요.",
+                  hintText: "비밀번호를 한번 더 입력해주세요.",
                 ),
               ),
 
@@ -227,13 +241,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 5.0),
               Container(
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                width: currentWdith,
+                width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(6),
                   controller: NameEditingController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return ("Name cannor be Empty");
+                      return ("Name cannot be Empty");
                     }
                     return null;
                   },
@@ -269,10 +284,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 5.0),
               Container(
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                width: currentWdith,
+                width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(7),
                   controller: authController.emailController,
+                  validator: (value) {
+                  if(value!.isEmpty || !value.contains('@') ){
+                    return 'Please enter a valid email address.';
+                  }
+                  return null;
+                  },
                   hintText: "예: ttangkkeus12@ttangkeus.com",
                 ),
               ),
@@ -308,10 +330,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   ),
-                  Container(
-                    width: currentWdith / 1.9,
+                  SizedBox(
+                    width: currentWidth / 1.9,
                     // height: 35.0,
                     child: ReusableTextField(
+                      key: ValueKey(8),
                       hintText: "'-'없이 숫자만",
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
@@ -319,8 +342,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
-                  Container(
-                    width: currentWdith / 2.9,
+                  SizedBox(
+                    width: currentWidth / 2.9,
                     // width: 140.0,
                     // height: 35.0,
                     // child: Expanded(
@@ -335,7 +358,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-                          currentWdith / 1.9,
+                          currentWidth / 1.9,
                           currentHeight / 17.5,
                         ),
                       ),
@@ -360,16 +383,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   ),
                   Container(
-                    width: currentWdith / 1.9,
+                    width: currentWidth / 1.9,
                     // height: 35.0,
                     child: ReusableTextField(
-                        // hintText: "'-'없이 숫자만",
+                      key: ValueKey(9),
+                      // hintText: "'-'없이 숫자만",
                         // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                         ),
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
                   Container(
-                    width: currentWdith / 2.9,
+                    width: currentWidth / 2.9,
                     // height: 35.0,
                     // child: Expanded(
                     child: OutlinedButton(
@@ -383,7 +407,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-                          currentWdith / 1.9,
+                          currentWidth / 1.9,
                           currentHeight / 17.5,
                         ),
                       ),
@@ -429,12 +453,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 5.0),
               Container(
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                width: currentWdith,
+                width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(10),
                   onTap: () {},
                   hintText: '도로명, 지번, 건물명 검색',
-                  suffixicon: LineIcon(Icons.search),
+                  suffixIcon: LineIcon(Icons.search),
                 ),
               ),
               const SizedBox(height: 140.0),
@@ -450,9 +475,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   );
                 },
               ),
-              // ReusableTextField(
-              //     labelText: 'labelText',
-              //     controller: authController.emailController),
             ],
           ),
         ),
