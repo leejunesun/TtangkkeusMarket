@@ -47,6 +47,10 @@ dependencies:
   bloc_pattern: ^3.0.1
   json_annotation: ^2.0.0
   fluttertoast: ^8.0.9
+  firebase_storage: ^10.2.17
+  flutter_image_compress: ^1.0.0-nullsafety
+  image_picker: ^0.8.5+3
+
 
 dev_dependencies:
   flutter_test:

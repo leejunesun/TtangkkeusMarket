@@ -26,10 +26,11 @@ class AuthService {
     return _userFromFirebase(Credential.user);
   }
 
-  Future<User?> createUserWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
+  Future<User?> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
+    required String username,
+  }) async {
     final Credential = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
