@@ -57,8 +57,7 @@ class LoginScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   focusedBorder: const OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.black, width: 1.0)),
+                      borderSide: BorderSide(color: Colors.black, width: 1.0)),
                   hintText: "아이디를 입력해주세요."),
             ),
           ),
@@ -69,7 +68,7 @@ class LoginScreen extends StatelessWidget {
               controller: authController.loginPasswordContorller,
               obscureText: true,
               validator: (value) {
-                RegExp regex = new RegExp(r'^.{6,}$');
+                RegExp regex = RegExp(r'^.{6,}$');
                 if (value!.isEmpty) {
                   return ("Password is required for login");
                 }
@@ -105,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MypageScreen()));
+                            builder: (context) => const MypageScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color(

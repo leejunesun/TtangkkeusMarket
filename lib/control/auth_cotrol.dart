@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
 import 'package:ttangkkeusmarket/src/widgets/tabbar.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/Authstatus.dart';
 
 class AuthController extends GetxController {
   //sign up text editing controllers
