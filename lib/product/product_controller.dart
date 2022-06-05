@@ -21,9 +21,9 @@ class AddState extends GetxController {
 
   late File _image;
   final picker = ImagePicker();
-  final _valueList = ['상품명', '개수', '종류'];
-  var _selectedValue = 'Top';
-  var selectCheck = int.parse('1');
+  //final _valueList = ['상품명', '개수', '종류'];
+  //var _selectedValue = 'Top';
+  //var selectCheck = int.parse('1');
 
 //
   final GlobalKey<FormState> _titlefk = GlobalKey<FormState>();
@@ -56,6 +56,7 @@ class AddState extends GetxController {
   final String Image_count_number = 'count_number';
   final String Image_bank_name = 'bank_name';
 
+//firebase 필드,값 데이터 저장
   void createDoc(
       String name,
       String URL,
@@ -77,6 +78,7 @@ class AddState extends GetxController {
     });
   }
 
+//firebase 에 이미지 업로드 하는 함수
   _Update() async {
     Reference ref =
         _firebaseStorage.ref().child("profile/${product_name.text}");
@@ -102,13 +104,13 @@ class AddState extends GetxController {
     return downloadURL;
   }
 
-  void reset() {
-    _titlefk.currentState!.reset();
-    _topfk.currentState!.reset();
-    _bottomfk.currentState!.reset();
-    _shoesfk.currentState!.reset();
-    _sellerfk.currentState!.reset();
-  }
+//  void reset() {
+  //  _titlefk.currentState!.reset();
+  //_topfk.currentState!.reset();
+  //_bottomfk.currentState!.reset();
+  //_shoesfk.currentState!.reset();
+  //_sellerfk.currentState!.reset();
+  // }
 
   Widget _BuildCameraButton() {
     return InkWell(
@@ -123,7 +125,6 @@ class AddState extends GetxController {
     );
   }
 
-  //사진 파일 압축
   Widget _BuildPhotoAlbumeButton() {
     return InkWell(
       child: Icon(Icons.image, color: Colors.white, size: 50),
@@ -133,6 +134,7 @@ class AddState extends GetxController {
     );
   }
 
+//사진 파일 압축
   Future<File> _compressImage(XFile? file, String targetPath) async {
     var result = await FlutterImageCompress.compressAndGetFile(
         file!.path, targetPath,
