@@ -4,6 +4,13 @@
         android:label="땅끗마켓"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <!--google map -->
+       <meta-data
+           android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyAnB4HlKMR92iQL5Ltyetcjubqew7y_4U0"
+           />
+       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
