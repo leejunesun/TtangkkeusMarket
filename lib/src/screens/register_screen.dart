@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_cotrol.dart';
-
-import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
+import 'package:ttangkkeusmarket/src/widgets/custom_button.dart';
+import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
+import 'package:provider/provider.dart';
 import '../widgets/angleleft_appbar.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
+import 'package:get/get.dart';
+import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+import 'package:ttangkkeusmarket/Phone/auth_phone.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ttangkkeusmarket/src/models/user.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/Authstatus.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../widgets/components/reusable_primary_button.dart';
 import '../widgets/components/reusable_textfield.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:remedi_kopo/remedi_kopo.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -23,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController useridController = TextEditingController();
   final TextEditingController NameEditingController = TextEditingController();
   String? errorMessage;
-
+  String addressJSON = '';
   @override
   Widget build(BuildContext context) {
     AuthController authController = AuthController();
@@ -432,11 +444,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWdith,
                 // height: 35.0,
                 child: ReusableTextField(
-                  onTap: () {},
+                  onTap: () async {
+                    KopoModel model = await Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => RemediKopo(),
+                      ),
+                    );
+                    print(model.toJson());
+                    setState(() {
+                      addressJSON =
+                          '${model.address} ${model.buildingName}${model.apartment == 'Y' ? '아파트' : ''}${model.zonecode}';
+                    });
+                  },
                   hintText: '도로명, 지번, 건물명 검색',
                   suffixicon: LineIcon(Icons.search),
                 ),
               ),
+              Text('$addressJSON'), // textfiled 안에 넣어야하는데 에러뜸
               const SizedBox(height: 140.0),
               ReusablePrimaryButton(
                 buttonText: '가입하기',
