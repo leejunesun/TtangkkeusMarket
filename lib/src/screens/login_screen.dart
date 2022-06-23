@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+
+
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
+
 import 'package:ttangkkeusmarket/src/widgets/login_appbar.dart';
+import 'package:ttangkkeusmarket/src/widgets/timesbutton_appbar.dart';
+
+
 import 'package:ttangkkeusmarket/src/cloud_functions/auth_control.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
+
+
+import 'package:ttangkkeusmarket/methods/validate.dart';
+
+  
+  
 import '../widgets/components/reusable_textfield.dart';
+
+import 'package:ttangkkeusmarket/wrapper.dart';
+import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
+
+import '../cloud_functions/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+
+import 'package:line_icons/line_icons.dart';
+
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -24,35 +52,66 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: LoginAppBar(appBar: AppBar(), title: "로그인", center: true),
-      body: GestureDetector(
-        onTap: () {
-          FocusScope.of(context).unfocus();
-        },
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-              child: Form(
-                child: ReusableTextField(
-                    key: ValueKey(1),
-                    controller: authController.loginEmailController,
-                    validator: (value) {
-                      if (value!.isEmpty || value.length < 6) {
-                        return ("Please Enter Your Email");
-                      }
-                      if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                          .hasMatch(value)) {
-                        return ("Please Enter a valid email");
-                      }
-                      return null;
-                    },
-                    // onSaved: (value) {
-                    //   authController.loginEmailController.text = value!;
-                    // },
-                    //loginEmailController.text,
-                    hintText: "아이디를 입력해주세요."),
-              ),
+//       body: GestureDetector(
+//         onTap: () {
+//           FocusScope.of(context).unfocus();
+//         },
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           children: [
+//             Container(
+//               margin: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+//               child: Form(
+//                 child: ReusableTextField(
+//                     key: ValueKey(1),
+//                     controller: authController.loginEmailController,
+//                     validator: (value) {
+//                       if (value!.isEmpty || value.length < 6) {
+//                         return ("Please Enter Your Email");
+//                       }
+//                       if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+//                           .hasMatch(value)) {
+//                         return ("Please Enter a valid email");
+//                       }
+//                       return null;
+//                     },
+//                     // onSaved: (value) {
+//                     //   authController.loginEmailController.text = value!;
+//                     // },
+//                     //loginEmailController.text,
+//                     hintText: "아이디를 입력해주세요."),
+//               ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            child: TextFormField(
+              controller: authController.loginEmailController,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return ("Please Enter Your Email");
+                }
+                if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                    .hasMatch(value)) {
+                  return ("Please Enter a valid email");
+                }
+                return null;
+              },
+              onSaved: (value) {
+                authController.loginEmailController.text = value!;
+              },
+
+              //loginEmailController.text,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Color(0xFFA2A7B9), width: 2.0),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 1.0)),
+                  hintText: "아이디를 입력해주세요."),
             ),
 
             Container(
