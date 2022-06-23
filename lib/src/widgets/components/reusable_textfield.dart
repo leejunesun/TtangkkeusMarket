@@ -7,19 +7,26 @@ class ReusableTextField extends StatelessWidget {
     this.controller,
     this.labelText,
     this.hintText,
-    this.suffixicon,
+    this.suffixIcon,
     this.validator,
+    this.onSaved,
+    this.obscureText,
+
   }) : super(key: key);
   VoidCallback? onTap;
   TextEditingController? controller;
   String? labelText;
   String? hintText;
-  Icon? suffixicon;
+  Icon? suffixIcon;
   String? Function(String?)? validator;
+  String? Function(String?)? onSaved;
+  bool? obscureText;
 
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: validator,
+      onSaved: onSaved,
       onTap: onTap,
       controller: controller,
       decoration: InputDecoration(
@@ -40,7 +47,7 @@ class ReusableTextField extends StatelessWidget {
           ),
         ),
         hintText: hintText,
-        suffixIcon: suffixicon,
+        suffixIcon: suffixIcon,
       ),
     );
   }
