@@ -10,7 +10,8 @@ import 'package:ttangkkeusmarket/src/providers/bottom_nav_provider.dart';
 import 'package:ttangkkeusmarket/src/screens/register_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); //추가
+  // await FlutterConfig.loadEnvVariables();  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
