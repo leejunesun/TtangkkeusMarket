@@ -1,31 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_control.dart';
 
-import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
-import 'package:ttangkkeusmarket/src/widgets/custom_button.dart';
 import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
-import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
 
-
-import 'package:ttangkkeusmarket/src/models/user.dart';
-
-import '../widgets/components/reusable_primary_button.dart';
-import '../widgets/components/reusable_textfield.dart';
+import 'package:ttangkkeusmarket/src/cloud_functions/auth_control.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../widgets/angleleft_appbar.dart';
-
-import 'package:provider/provider.dart';
-import 'package:get/get.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:ttangkkeusmarket/Phone/auth_phone.dart';
-
-
-
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
-import 'package:ttangkkeusmarket/src/cloud_functions/Authstatus.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import '../widgets/components/reusable_primary_button.dart';
+import '../widgets/components/reusable_textfield.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:remedi_kopo/remedi_kopo.dart';
@@ -102,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: ReusableTextField(
                       key: ValueKey(3),
                       validator: (value) {
-                        if(value!.isEmpty || value.length < 6) {
+                        if (value!.isEmpty || value.length < 6) {
                           return 'Please enter at least 6 charters';
                         }
                         return null;
@@ -311,10 +294,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   key: ValueKey(7),
                   controller: authController.emailController,
                   validator: (value) {
-                  if(value!.isEmpty || !value.contains('@') ){
-                    return 'Please enter a valid email address.';
-                  }
-                  return null;
+                    if (value!.isEmpty || !value.contains('@')) {
+                      return 'Please enter a valid email address.';
+                    }
+                    return null;
                   },
                   hintText: "예: ttangkkeus12@ttangkeus.com",
                 ),
@@ -409,8 +392,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: ReusableTextField(
                       key: ValueKey(9),
                       // hintText: "'-'없이 숫자만",
-                        // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
-                        ),
+                      // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
+                    ),
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
                   Container(
@@ -477,7 +460,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-
                   onTap: () async {
                     KopoModel model = await Navigator.push(
                       context,

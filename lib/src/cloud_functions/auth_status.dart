@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
 
 enum AuthStatus {
   successful,
@@ -49,7 +48,7 @@ class AuthExceptionHandler {
             "The email address is already in use by another account.";
         break;
       default:
-        errorMessage = "An error occured. Please try again later.";
+        errorMessage = "An error occurred. Please try again later.";
     }
     return errorMessage;
   }

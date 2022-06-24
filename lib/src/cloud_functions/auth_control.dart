@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 class AuthController extends GetxController {
   //sign up text editing controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmpasswordController = TextEditingController();
+  final TextEditingController confirmpasswordController =
+  TextEditingController();
   //login text editing controllers
   final TextEditingController loginEmailController = TextEditingController();
   final TextEditingController loginPasswordContorller = TextEditingController();
