@@ -10,7 +10,6 @@ import '../widgets/angleleft_appbar.dart';
 import '../widgets/components/reusable_primary_button.dart';
 import '../widgets/components/reusable_textfield.dart';
 
-import 'package:flutter/cupertino.dart';
 import 'package:remedi_kopo/remedi_kopo.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -75,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   // const Padding(
-                  //   padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  // padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   // ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -396,7 +395,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
-                  Container(
+                  SizedBox(
                     width: currentWidth / 2.9,
                     // height: 35.0,
                     // child: Expanded(
@@ -463,11 +462,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onTap: () async {
                     KopoModel model = await Navigator.push(
                       context,
-                      CupertinoPageRoute(
+                      MaterialPageRoute(
                         builder: (context) => RemediKopo(),
                       ),
                     );
-                    print(model.toJson());
                     setState(() {
                       addressJSON =
                           '${model.address} ${model.buildingName}${model.apartment == 'Y' ? '아파트' : ''}${model.zonecode}';

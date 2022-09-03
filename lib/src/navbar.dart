@@ -30,7 +30,6 @@ class CustomNavBar extends StatelessWidget {
           return const SearchScreen();
         case 4:
           return const MypageScreen();
-
       }
       return Container();
     }
@@ -47,8 +46,8 @@ class CustomNavBar extends StatelessWidget {
             label: '카테고리',
           ),
           BottomNavigationBarItem(
-              icon: Icon(LineIcons.mapMarker),
-              label: '내 주변',
+            icon: Icon(LineIcons.mapMarker),
+            label: '내 주변',
           ),
           BottomNavigationBarItem(
             icon: Icon(LineIcons.search),
