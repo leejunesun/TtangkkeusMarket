@@ -36,12 +36,12 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Color(0xFFF6C544),
+            primaryColor: const Color(0xFFF6C544),
           ),
           initialRoute: '/',
           routes: {
             // '/': (context) => CustomNavBar(),
-            '/register': (context) => RegisterScreen(),
+            '/register': (context) => const RegisterScreen(),
           },
           home: MultiProvider(
             providers: [

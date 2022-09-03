@@ -36,10 +36,12 @@ class MypageScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ))
+                  ),
+              ),
             ],
           ),
-        ));
+        ),
+    );
   }
 }
 
