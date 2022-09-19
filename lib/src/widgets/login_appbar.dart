@@ -16,7 +16,7 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       leading: IconButton(
-        icon: Icon(LineIcons.times),
+        icon: const Icon(LineIcons.times),
         iconSize: 32.0,
         color: Colors.black,
         onPressed: () => Navigator.of(context).pop(),
@@ -24,7 +24,7 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: center,
       title: Text(
         "$title",
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.black,
             fontFamily: 'SF',
             fontSize: 24.0,

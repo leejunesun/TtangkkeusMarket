@@ -23,11 +23,11 @@ class MypageScreen extends StatelessWidget {
                       Navigator.of(context).push(_loginRoute());
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFF6C544),
+                      primary: const Color(0xFFF6C544),
                       elevation: 0.0,
                       shadowColor: Colors.transparent,
                     ),
-                    child: Text(
+                    child: const Text(
                       "로그인/회원가입",
                       style: TextStyle(
                         color: Colors.black,
@@ -36,16 +36,18 @@ class MypageScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ))
+                  ),
+              ),
             ],
           ),
-        ));
+        ),
+    );
   }
 }
 
 Route _loginRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => LoginScreen(),
+    pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(0.0, 1.0);
       const end = Offset.zero;

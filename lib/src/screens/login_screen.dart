@@ -1,33 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
 import 'package:ttangkkeusmarket/src/widgets/login_appbar.dart';
-import 'package:ttangkkeusmarket/wrapper.dart';
-import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
-import '../cloud_functions/auth_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
-import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
-import 'package:ttangkkeusmarket/methods/validate.dart';
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:ttangkkeusmarket/src/widgets/timesbutton_appbar.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-class LoginScreen extends StatelessWidget {
+import 'package:ttangkkeusmarket/src/widgets/components/reusable_textfield.dart';
+
+import '../cloud_functions/auth_control.dart';
+
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool isRegisterScreen = true;
 
   @override
   Widget build(BuildContext context) {
     AuthController authController = AuthController();
     //final _formKey = GlobalKey<FormState>();
-    // final authService = Provider.of<AuthService>(context);
-
-    final currentWdith = MediaQuery.of(context).size.width;
+    // final authService = Provider.of<AuthService>(context);s
+    final currentWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: LoginAppBar(appBar: AppBar(), title: "로그인", center: true),
+//       body: GestureDetector(
+//         onTap: () {
+//           FocusScope.of(context).unfocus();
+//         },
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           children: [
+//             Container(
+//               margin: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+//               child: Form(
+//                 child: ReusableTextField(
+//                     key: ValueKey(1),
+//                     controller: authController.loginEmailController,
+//                     validator: (value) {
+//                       if (value!.isEmpty || value.length < 6) {
+//                         return ("Please Enter Your Email");
+//                       }
+//                       if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+//                           .hasMatch(value)) {
+//                         return ("Please Enter a valid email");
+//                       }
+//                       return null;
+//                     },
+//                     // onSaved: (value) {
+//                     //   authController.loginEmailController.text = value!;
+//                     // },
+//                     //loginEmailController.text,
+//                     hintText: "아이디를 입력해주세요."),
+//               ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -62,41 +91,37 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
 
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-            child: TextFormField(
-              controller: authController.loginPasswordContorller,
-              obscureText: true,
-              validator: (value) {
-                RegExp regex = RegExp(r'^.{6,}$');
-                if (value!.isEmpty) {
-                  return ("Password is required for login");
-                }
-                if (!regex.hasMatch(value)) {
-                  return ("Enter Valid Password(Min. 6 Character");
-                }
-              },
-              onSaved: (value) {
-                authController.loginPasswordContorller.text = value!;
-              },
-              decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                          color: Color(0xFFA2A7B9), width: 1.0),
-                      borderRadius: BorderRadius.circular(5.0)),
-                  focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black, width: 1.0)),
-                  hintText: "비밀번호를 입력해주세요."),
+          Container(
+            margin: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+            child: Form(
+              child: ReusableTextField(
+                key: ValueKey(2),
+                controller: authController.loginPasswordContorller,
+                obscureText: true,
+                validator: (value) {
+                  RegExp regex = RegExp(r'^.{6,}$');
+                  if (value!.isEmpty) {
+                    return ("Password is required for login");
+                  }
+                  if (!regex.hasMatch(value)) {
+                    return ("Enter Valid Password(Min. 6 Character");
+                  }
+                },
+                onSaved: (value) {
+                  authController.loginPasswordContorller.text = value!;
+                },
+                hintText: "비밀번호를 입력해주세요.",
+              ),
             ),
           ),
           //SizedBox(
           //height: 25.0,
           //),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+          Container(
+            margin: const EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
             child: Form(
               child: SizedBox(
-                width: currentWdith - 15,
+                width: currentWidth - 15,
                 height: 40.0,
                 child: ElevatedButton(
                   onPressed: () {
@@ -166,13 +191,16 @@ class LoginScreen extends StatelessWidget {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20.0, 35.0, 20.0, 0.0),
+          Container(
+            margin: const EdgeInsets.fromLTRB(20.0, 35.0, 20.0, 0.0),
             child: SizedBox(
-              width: currentWdith - 15,
+              width: currentWidth - 15,
               height: 40.0,
               child: ElevatedButton(
                 onPressed: () {
+                  setState(() {
+                    isRegisterScreen = false;
+                  });
                   Navigator.pushNamed(context, '/register');
                 },
                 style: ElevatedButton.styleFrom(

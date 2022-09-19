@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ttangkkeusmarket/src/screens/recommend.dart';
-import 'package:ttangkkeusmarket/src/screens/newitem.dart';
-import 'package:ttangkkeusmarket/src/screens/bestitem.dart';
-import 'package:ttangkkeusmarket/src/screens/discount.dart';
+import 'package:ttangkkeusmarket/src/screens/recommend_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/newitem_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/bestitem_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/discount_screen.dart';
+
 
 class MainTabBar extends StatelessWidget {
   const MainTabBar({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class MainTabBar extends StatelessWidget {
       length: 4,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: Colors.transparent,
         body: Column(children: const [
           TabBar(
             indicatorColor: Color(0xFF000000),

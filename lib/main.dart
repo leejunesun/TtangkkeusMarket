@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 import 'package:provider/provider.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:get/get.dart';
+import 'package:ttangkkeusmarket/src/models/model_auth.dart';
 import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
 import 'package:ttangkkeusmarket/src/navbar.dart';
 import 'package:ttangkkeusmarket/src/providers/bottom_nav_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'src/screens/login_screen.dart';
-import 'wrapper.dart';
 import 'package:ttangkkeusmarket/src/screens/register_screen.dart';
-//import 'src/screens/register_screen.dart';
+import 'package:ttangkkeusmarket/src/models/model_item_provider.dart';
+import 'package:ttangkkeusmarket/src/models/model_item.dart';
+import 'package:ttangkkeusmarket/src/screens/item_detail.dart';
+import 'package:ttangkkeusmarket/src/models/model_query.dart';
+import 'package:ttangkkeusmarket/src/screens/search_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); //추가
+  // await FlutterConfig.loadEnvVariables();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -30,6 +34,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
+          ChangeNotifierProvider(create: (_) => FirebaseAuthProvider()),
+          ChangeNotifierProvider(create: (_) => ItemProvider()),
+          ChangeNotifierProvider(create: (_) => QueryProvider()),
           Provider<AuthService>(
             create: (_) => AuthService(),
           ),
@@ -37,12 +44,14 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Color(0xFFF6C544),
+            primaryColor: const Color(0xFFF6C544),
           ),
           initialRoute: '/',
           routes: {
             // '/': (context) => CustomNavBar(),
-            '/register': (context) => RegisterScreen(),
+            '/register': (context) => const RegisterScreen(),
+            '/detail': (context) => DetailScreen(),
+            '/search': (context) => SearchScreen(),
           },
           home: MultiProvider(
             providers: [
