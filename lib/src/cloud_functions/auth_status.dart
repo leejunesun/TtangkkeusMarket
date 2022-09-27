@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
 
 enum AuthStatus {
   successful,
@@ -52,4 +52,4 @@ class AuthExceptionHandler {
     }
     return errorMessage;
   }
-}
+}*/

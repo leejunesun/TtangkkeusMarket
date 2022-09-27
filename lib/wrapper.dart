@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ttangkkeusmarket/src/cloud_functions/auth_service.dart';
-import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+//import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_login.dart';
 
 import 'src/models/user.dart';
 
@@ -27,4 +28,4 @@ class Wrapper extends StatelessWidget {
           }
         });
   }
-}
+}*/

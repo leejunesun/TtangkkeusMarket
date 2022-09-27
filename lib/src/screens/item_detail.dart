@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ttangkkeusmarket/src/models/model_cart.dart';
 
-import 'package:ttangkkeusmarket/src/models/model_item.dart';
+import '../models/model_item.dart';
 
 class DetailScreen extends StatelessWidget {
+  late String uid = '';
+
+  Future<void> getUid() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    uid = prefs.getString('uid') ?? '';
+  }
+
   @override
   Widget build(BuildContext context) {
     final item = ModalRoute.of(context)!.settings.arguments as Item;
+    final cartProvider = Provider.of<CartProvider>(context);
+    getUid();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(item.title),
@@ -46,21 +59,26 @@ class DetailScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.add,
-                          color: Colors.blue,
-                        ),
-                        Text(
-                          'add cart',
-                          style: TextStyle(color: Colors.blue),
+                  cartProvider.isCartItemIn(item)
+                      ? Icon(Icons.check, color: Colors.blue)
+                      : InkWell(
+                          onTap: () {
+                            print(uid);
+                            cartProvider.addCartItem(uid, item);
+                          },
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.add,
+                                color: Colors.blue,
+                              ),
+                              Text(
+                                'add cart',
+                                style: TextStyle(color: Colors.blue),
+                              )
+                            ],
+                          ),
                         )
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
