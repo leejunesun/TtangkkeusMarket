@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ttangkkeusmarket/src/models/model_auth.dart';
 import 'package:ttangkkeusmarket/src/models/model_login.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_profile.dart';
+import 'package:ttangkkeusmarket/src/navbar.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -94,7 +96,7 @@ class LoginButton extends StatelessWidget {
                 ..showSnackBar(SnackBar(
                     content:
                         Text('welcome! ' + authClient.user!.email! + ' ')));
-              Navigator.pushReplacementNamed(context, '/index');
+              Navigator.pushReplacementNamed(context, '/');
             } else {
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()

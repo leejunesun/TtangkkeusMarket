@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
+import 'package:ttangkkeusmarket/src/screens/cart_screen.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar(
@@ -18,6 +20,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () => {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => CartScreen()))
             // do something
           },
           icon: const Icon(

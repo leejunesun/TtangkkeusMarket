@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:ttangkkeusmarket/src/models/model_auth.dart';
 import 'package:ttangkkeusmarket/src/models/model_register.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(

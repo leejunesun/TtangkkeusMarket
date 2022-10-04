@@ -1,4 +1,4 @@
-class User {
+/*class User {
   String? uid;
   String? email;
   String? password;
@@ -19,3 +19,4 @@ class User {
     this.postalcode,
   });
 }
+*/

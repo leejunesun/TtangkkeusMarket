@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ttangkkeusmarket/src/widgets/base_appbar.dart';
-
+import 'package:ttangkkeusmarket/src/screens/screen_splash.dart';
 import './screen_login.dart';
 
 class MypageScreen extends StatelessWidget {
@@ -47,7 +47,7 @@ class MypageScreen extends StatelessWidget {
 
 Route _loginRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => LoginScreen(),
+    pageBuilder: (context, animation, secondaryAnimation) => LoginScreens(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(0.0, 1.0);
       const end = Offset.zero;

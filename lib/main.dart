@@ -18,6 +18,9 @@ import 'package:ttangkkeusmarket/src/models/model_query.dart';
 import 'package:ttangkkeusmarket/src/screens/search_screen.dart';
 import 'package:ttangkkeusmarket/src/models/model_cart.dart';
 import 'package:ttangkkeusmarket/src/screens/screen_splash.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_profile.dart';
+import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //추가
@@ -51,10 +54,13 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             // '/': (context) => CustomNavBar(),
-            '/login': (context) => LoginScreen(),
-            '/register': (context) => RegisterScreen(),
+            '/login': (context) => LoginScreens(),
+            '/register': (context) => RegisterScreens(),
             '/detail': (context) => DetailScreen(),
             '/search': (context) => SearchScreen(),
+            '/profile': (context) => TabProfile(),
+            '/home': (context) => HomeScreen(),
+            '/mypage': (context) => MypageScreen(),
           },
           home: MultiProvider(
             providers: [

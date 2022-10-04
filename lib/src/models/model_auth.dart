@@ -16,6 +16,8 @@ class FirebaseAuthProvider with ChangeNotifier {
           .createUserWithEmailAndPassword(email: email, password: password);
       return AuthStatus.registerSuccess;
     } catch (e) {
+      print('Init failed' + e.toString());
+
       return AuthStatus.registerFail;
     }
   }
