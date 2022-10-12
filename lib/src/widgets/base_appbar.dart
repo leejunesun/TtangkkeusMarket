@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:ttangkkeusmarket/src/screens/cart_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/home_screen.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar(
@@ -17,6 +18,17 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0.0,
+      leading: IconButton(
+        onPressed: () => {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()))
+        },
+        icon: const Icon(
+          LineIcons.home,
+          size: 32.0,
+          color: Colors.black,
+        ),
+      ),
       actions: [
         IconButton(
           onPressed: () => {
@@ -29,7 +41,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             size: 32.0,
             color: Colors.black,
           ),
-        )
+        ),
       ],
       centerTitle: center,
       title: Text(

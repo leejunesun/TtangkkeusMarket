@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttangkkeusmarket/src/screens/cart_screen.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -53,14 +54,15 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           routes: {
-            // '/': (context) => CustomNavBar(),
-            '/login': (context) => LoginScreens(),
-            '/register': (context) => RegisterScreens(),
-            '/detail': (context) => DetailScreen(),
-            '/search': (context) => SearchScreen(),
-            '/profile': (context) => TabProfile(),
-            '/home': (context) => HomeScreen(),
-            '/mypage': (context) => MypageScreen(),
+            //'/': (context) => CustomNavBar(),
+            '/login': (BuildContext context) => LoginScreens(),
+            '/register': (BuildContext context) => RegisterScreens(),
+            '/detail': (BuildContext context) => DetailScreen(),
+            '/search': (BuildContext context) => SearchScreen(),
+            '/profile': (BuildContext context) => TabProfile(),
+            '/home': (BuildContext context) => HomeScreen(),
+            '/mypage': (BuildContext context) => MypageScreen(),
+            '/cart': (BuildContext context) => CartScreen(),
           },
           home: MultiProvider(
             providers: [

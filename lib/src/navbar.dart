@@ -27,17 +27,19 @@ class CustomNavBar extends StatelessWidget {
         case 0:
           return const HomeScreen();
         case 1:
-          return const CategoryScreen();
+          return CategoryScreen();
         case 2:
           return const MapScreen();
         case 3:
           return const SearchScreen();
         case 4:
-          return MypageScreen();
+          return SplashScreen();
         case 5:
           return TabHome();
         case 6:
           return CartScreen();
+        case 7:
+          return TabProfile();
       }
       return Container();
     }
@@ -69,7 +71,8 @@ class CustomNavBar extends StatelessWidget {
             icon: Icon(LineIcons.safari),
             label: '아이템',
           ),
-          BottomNavigationBarItem(icon: Icon(LineIcons.accusoft), label: '프로필')
+          BottomNavigationBarItem(icon: Icon(LineIcons.accusoft), label: '프로필'),
+          BottomNavigationBarItem(icon: Icon(LineIcons.walking), label: '로그아웃')
         ],
         currentIndex: bottomNavigationBar.currentPage,
         unselectedItemColor: const Color(0xFF161921),
