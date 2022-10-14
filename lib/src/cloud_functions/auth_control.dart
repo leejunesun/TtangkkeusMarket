@@ -1,10 +1,10 @@
 /*import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
-
 //import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/screen_login.dart';
+import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -16,6 +16,7 @@ class AuthController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmpasswordController =
       TextEditingController();
+  TextEditingController();
   //login text editing controllers
   final TextEditingController loginEmailController = TextEditingController();
   final TextEditingController loginPasswordContorller = TextEditingController();

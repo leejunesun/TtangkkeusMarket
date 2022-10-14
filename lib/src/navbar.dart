@@ -27,7 +27,7 @@ class CustomNavBar extends StatelessWidget {
         case 0:
           return const HomeScreen();
         case 1:
-          return CategoryScreen();
+          return const CategoryScreen();
         case 2:
           return const MapScreen();
         case 3:
