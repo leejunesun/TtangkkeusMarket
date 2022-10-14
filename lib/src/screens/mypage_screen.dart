@@ -1,64 +1,85 @@
 import 'package:flutter/material.dart';
 import 'package:ttangkkeusmarket/src/widgets/base_appbar.dart';
-
-import './login_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_splash.dart';
+import './screen_login.dart';
+import 'package:provider/provider.dart';
+import 'package:ttangkkeusmarket/src/models/model_auth.dart';
+import 'package:ttangkkeusmarket/src/navbar.dart';
 
 class MypageScreen extends StatelessWidget {
-  const MypageScreen({Key? key}) : super(key: key);
-
+  MypageScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final authClient =
+        Provider.of<FirebaseAuthProvider>(context, listen: false);
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: BaseAppBar(appBar: AppBar(), title: "마이페이지", center: true),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                  width: 340,
-                  height: 40,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(_loginRoute());
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFFF6C544),
-                      elevation: 0.0,
-                      shadowColor: Colors.transparent,
-                    ),
-                    child: const Text(
-                      "로그인/회원가입",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'NotoSans',
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-              ),
-            ],
-          ),
+        appBar: BaseAppBar(
+          appBar: AppBar(),
+          title: "마이페이지",
+          center: true,
         ),
-    );
+        body: ListView(scrollDirection: Axis.vertical, children: <Widget>[
+          ListTile(
+            title: Text('환영합니다! ' + authClient.user!.email! + '님 '),
+            dense: true,
+            visualDensity: VisualDensity(vertical: 4),
+          ),
+          ListTile(
+            title: Text('주문내역'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('고객센터'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('상품문의'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('대량주문 문의'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('자주하는질문'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('로그아웃'),
+            trailing: Icon(Icons.navigate_next),
+            onTap: () {
+              authClient.logout();
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(SnackBar(content: Text('logout!')));
+              Navigator.of(context).pushReplacementNamed('/');
+            },
+          )
+        ]));
   }
 }
 
-Route _loginRoute() {
-  return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      const begin = Offset(0.0, 1.0);
-      const end = Offset.zero;
-      const curve = Curves.ease;
+class LoginOutButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final authClient =
+        Provider.of<FirebaseAuthProvider>(context, listen: false);
+    return TextButton(
+      onPressed: () async {
+        await authClient.logout();
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(SnackBar(content: Text('logout!')));
+        Navigator.of(context).pushReplacementNamed('/');
+      },
+      child: Text('logout'),
+    );
+  }
 
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
-    },
-  );
 }

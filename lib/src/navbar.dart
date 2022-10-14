@@ -9,6 +9,10 @@ import 'package:ttangkkeusmarket/src/screens/category_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/map_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/search_screen.dart';
 import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/tab_home.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_profile.dart';
+import 'package:ttangkkeusmarket/src/screens/cart_screen.dart';
+import 'package:ttangkkeusmarket/src/screens/screen_splash.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({Key? key}) : super(key: key);
@@ -29,7 +33,13 @@ class CustomNavBar extends StatelessWidget {
         case 3:
           return const SearchScreen();
         case 4:
-          return const MypageScreen();
+          return SplashScreen();
+        case 5:
+          return TabHome();
+        case 6:
+          return CartScreen();
+        case 7:
+          return TabProfile();
       }
       return Container();
     }
@@ -57,6 +67,12 @@ class CustomNavBar extends StatelessWidget {
             icon: Icon(Icons.person_outline),
             label: '마이페이지',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(LineIcons.safari),
+            label: '아이템',
+          ),
+          BottomNavigationBarItem(icon: Icon(LineIcons.accusoft), label: '프로필'),
+          BottomNavigationBarItem(icon: Icon(LineIcons.walking), label: '로그아웃')
         ],
         currentIndex: bottomNavigationBar.currentPage,
         unselectedItemColor: const Color(0xFF161921),

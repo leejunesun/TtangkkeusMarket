@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ttangkkeusmarket/src/models/model_item_provider.dart';
+import 'package:provider/provider.dart';
 
 class CarouselSliderWidget extends StatefulWidget {
   const CarouselSliderWidget({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
     final currentHeight = MediaQuery.of(context).size.height;
+    final itemProvider = Provider.of<ItemProvider>(context);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
