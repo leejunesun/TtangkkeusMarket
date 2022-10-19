@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>42095887807-qra7ij0tbrobk5cin8cp4m3egvf5lm9b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.42095887807-qra7ij0tbrobk5cin8cp4m3egvf5lm9b</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>42095887807-5l9tq7q3oejnkclr9ctpgfvnuapd9baj.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDJjnJ-noRI-V9njPZlFZa0KzWH1guoSks</string>
+	<key>GCM_SENDER_ID</key>
+	<string>42095887807</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.ttangkkeusmarket</string>
+	<key>PROJECT_ID</key>
+	<string>ttangkkeumarket-5adc8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ttangkkeumarket-5adc8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:42095887807:ios:c5442ce59225cc37c24d0a</string>
+	<key>DATABASE_URL</key>
+	<string>https://ttangkkeumarket-5adc8-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
