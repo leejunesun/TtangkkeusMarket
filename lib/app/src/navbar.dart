@@ -32,6 +32,8 @@ class CustomNavBar extends StatelessWidget {
           return const MapScreen();
         case 3:
           return const SearchScreen();
+        case 4:
+          return MypageScreen();
       }
       return Container();
     }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ttangkkeusmarket/app/src/screens/login/login_screen.dart';
 import 'package:ttangkkeusmarket/app/src/widgets/base_appbar.dart';
 import 'package:provider/provider.dart';
+import 'package:ttangkkeusmarket/app/src/cloud_functions/auth_control.dart';
 import 'package:ttangkkeusmarket/app/src/models/auth_model.dart';
 
 class MypageScreen extends StatelessWidget {
@@ -18,9 +20,7 @@ class MypageScreen extends StatelessWidget {
         ),
         body: ListView(scrollDirection: Axis.vertical, children: <Widget>[
           ListTile(
-            title: Text('환영합니다! ${authClient.user!.email!}님 '),
-            dense: true,
-            visualDensity: const VisualDensity(vertical: 4),
+            title: Text('환영합니다!'),
           ),
           ListTile(
             title: const Text('주문내역'),
@@ -48,6 +48,14 @@ class MypageScreen extends StatelessWidget {
             onTap: () {},
           ),
           ListTile(
+            title: const Text('로그인'),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+            },
+          ),
+          ListTile(
             title: const Text('로그아웃'),
             trailing: const Icon(Icons.navigate_next),
             onTap: () {
@@ -57,26 +65,7 @@ class MypageScreen extends StatelessWidget {
                 ..showSnackBar(const SnackBar(content: Text('logout!')));
               Navigator.of(context).pushReplacementNamed('/');
             },
-          )
+          ),
         ]));
   }
-}
-
-class LoginOutButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final authClient =
-        Provider.of<FirebaseAuthProvider>(context, listen: false);
-    return TextButton(
-      onPressed: () async {
-        await authClient.logout();
-        ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(const SnackBar(content: Text('logout!')));
-        Navigator.of(context).pushReplacementNamed('/');
-      },
-      child: const Text('logout'),
-    );
-  }
-
 }

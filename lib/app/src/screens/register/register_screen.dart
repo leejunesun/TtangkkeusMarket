@@ -1,14 +1,14 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
 
-import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+import 'package:ttangkkeusmarket/app/src/screens/login/login_screen.dart';
 
-import 'package:ttangkkeusmarket/src/cloud_functions/auth_control.dart';
+import 'package:ttangkkeusmarket/app/src/cloud_functions/auth_control.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../widgets/angleleft_appbar.dart';
-import '../widgets/components/reusable_primary_button.dart';
-import '../widgets/components/reusable_textfield.dart';
+import 'package:ttangkkeusmarket/app/src/widgets/angleleft_appbar.dart';
+import 'package:ttangkkeusmarket/app/src/widgets/components/reusable_primary_button.dart';
+import 'package:ttangkkeusmarket/app/src/widgets/components/reusable_textfield.dart';
 
 import 'package:remedi_kopo/remedi_kopo.dart';
 
@@ -82,15 +82,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     // width: 235.0,
                     // height: 40.0,
                     child: ReusableTextField(
-                      key: ValueKey(3),
+                      key: ValueKey(7),
                       validator: (value) {
-                        if (value!.isEmpty || value.length < 6) {
-                          return 'Please enter at least 6 charters';
+                        if (value!.isEmpty || !value.contains('@')) {
+                          return 'Please enter a valid email address.';
                         }
                         return null;
                       },
-                      controller: useridController,
-                      hintText: "예: ttangkkeus12",
+                      controller: authController.emailController,
+                      hintText: "예: ttangkkeus12@naver.com",
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
                       // helperMaxLines: 1,
@@ -248,7 +248,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 // height: 35.0,
                 child: ReusableTextField(
                   key: ValueKey(6),
-                  controller: NameEditingController,
+                  controller: authController.NameController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return ("Name cannot be Empty");
@@ -259,7 +259,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
 
-              const SizedBox(height: 25.0),
+              /*const SizedBox(height: 25.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: const <Widget>[
@@ -300,7 +300,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   hintText: "예: ttangkkeus12@ttangkeus.com",
                 ),
-              ),
+              ),*/
               const SizedBox(height: 50.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -338,6 +338,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     // height: 35.0,
                     child: ReusableTextField(
                       key: ValueKey(8),
+                      controller: authController.PhoneNumberController,
                       hintText: "'-'없이 숫자만",
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
@@ -459,8 +460,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
+                  key: ValueKey(7),
+                  controller: authController.addressController,
                   onTap: () async {
-                    KopoModel model = await Navigator.push(
+                    /*KopoModel model = await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => RemediKopo(),
@@ -469,7 +472,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     setState(() {
                       addressJSON =
                           '${model.address} ${model.buildingName}${model.apartment == 'Y' ? '아파트' : ''}${model.zonecode}';
-                    });
+                    });*/
                   },
                   hintText: '도로명, 지번, 건물명 검색',
                   suffixIcon: LineIcon(Icons.search),
@@ -495,4 +498,4 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
-}*/
+}

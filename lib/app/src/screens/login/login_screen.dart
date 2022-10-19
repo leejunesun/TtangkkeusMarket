@@ -1,12 +1,9 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:ttangkkeusmarket/app/src/screens/my_page/mypage_screen.dart';
+import 'package:ttangkkeusmarket/app/src/widgets/login_appbar.dart';
 
-import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
-import 'package:ttangkkeusmarket/src/widgets/login_appbar.dart';
-
-import 'package:ttangkkeusmarket/src/widgets/components/reusable_textfield.dart';
-
-import '../cloud_functions/auth_control.dart';
-
+import 'package:ttangkkeusmarket/app/src/widgets/components/reusable_textfield.dart';
+import 'package:ttangkkeusmarket/app/src/cloud_functions/auth_control.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -126,10 +123,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     authController.LoginUSER();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MypageScreen()));
+
+                    Navigator.pushReplacementNamed(context, '/');
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color(
@@ -232,4 +227,4 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-}*/
+}

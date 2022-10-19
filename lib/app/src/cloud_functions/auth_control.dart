@@ -1,9 +1,8 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 //import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
-import 'package:ttangkkeusmarket/src/screens/screen_login.dart';
-import 'package:ttangkkeusmarket/src/screens/login_screen.dart';
+import 'package:ttangkkeusmarket/app/src/screens/login/login_screen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,7 +15,9 @@ class AuthController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmpasswordController =
       TextEditingController();
-  TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController PhoneNumberController = TextEditingController();
+  final TextEditingController NameController = TextEditingController();
   //login text editing controllers
   final TextEditingController loginEmailController = TextEditingController();
   final TextEditingController loginPasswordContorller = TextEditingController();
@@ -26,8 +27,12 @@ class AuthController extends GetxController {
     final user = await _auth.createUserWithEmailAndPassword(
         email: emailController.text, password: passwordController.text);
     final firestore = FirebaseFirestore.instance;
-    firestore.collection('users').doc(user.user!.uid).set(
-        {"email": emailController.text, "password": passwordController.text});
+    firestore.collection('users').doc(user.user!.uid).set({
+      "email": emailController.text,
+      "password": passwordController.text,
+      "address": addressController.text,
+      "PhoneNumber": PhoneNumberController.text,
+    });
     if (user == null) {
       print('error');
     }
@@ -57,4 +62,4 @@ class AuthController extends GetxController {
     prefs.clear();
     Get.offAll(LoginScreen());
   }
-}*/
+}

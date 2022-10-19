@@ -1,5 +1,5 @@
-/*import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:ttangkkeusmarket/src/models/user.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:ttangkkeusmarket/app/src/models/user.dart';
 
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
@@ -40,4 +40,4 @@ class AuthService {
   Future<void> signOut() async {
     return await _firebaseAuth.signOut();
   }
-}*/
+}

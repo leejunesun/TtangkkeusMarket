@@ -10,8 +10,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:ttangkkeusmarket/app/src/models/auth_model.dart';
 import 'package:ttangkkeusmarket/app/src/navbar.dart';
 import 'package:ttangkkeusmarket/app/src/providers/bottom_nav_provider.dart';
-import 'package:ttangkkeusmarket/app/src/screens/login/screen_login.dart';
-import 'package:ttangkkeusmarket/app/src/screens/register/screen_regist.dart';
+import 'package:ttangkkeusmarket/app/src/screens/login/login_screen.dart';
+import 'package:ttangkkeusmarket/app/src/screens/register/register_screen.dart';
 import 'package:ttangkkeusmarket/app/src/models/item_provider_model.dart';
 import 'package:ttangkkeusmarket/app/src/models/query_model.dart';
 import 'package:ttangkkeusmarket/app/src/screens/search/search_screen.dart';
@@ -52,8 +52,8 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             //'/': (context) => CustomNavBar(),
-            '/login': (BuildContext context) => LoginScreens(),
-            '/register': (BuildContext context) => RegisterScreens(),
+            '/login': (BuildContext context) => LoginScreen(),
+            '/register': (BuildContext context) => RegisterScreen(),
             '/detail': (BuildContext context) => DetailScreen(),
             '/search': (BuildContext context) => SearchScreen(),
             '/profile': (BuildContext context) => TabProfile(),
