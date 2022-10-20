@@ -20,8 +20,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0.0,
       leading: IconButton(
         onPressed: () => {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen()))
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()))
         },
         icon: const Icon(
           LineIcons.home,
@@ -45,11 +45,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       centerTitle: center,
       title: Text(
-<<<<<<< HEAD:lib/app/src/widgets/base_appbar.dart
         title,
-=======
-        "$title",
->>>>>>> develop:lib/src/widgets/base_appbar.dart
         style: const TextStyle(
             color: Colors.black,
             fontFamily: 'SF',

@@ -5,23 +5,20 @@ import 'package:ttangkkeusmarket/app/src/screens/login/login_screen.dart';
 
 import 'package:ttangkkeusmarket/app/src/cloud_functions/auth_control.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
 
 import 'package:ttangkkeusmarket/app/src/widgets/angleleft_appbar.dart';
 import 'package:ttangkkeusmarket/app/src/widgets/components/reusable_primary_button.dart';
 import 'package:ttangkkeusmarket/app/src/widgets/components/reusable_textfield.dart';
 
-=======
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:ttangkkeusmarket/src/screens/mypage_screen.dart';
+import 'package:ttangkkeusmarket/app/src/screens/my_page/mypage_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ttangkkeusmarket/src/models/user.dart';
 import 'package:ttangkkeusmarket/src/cloud_functions/Authstatus.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../widgets/components/reusable_primary_button.dart';
-import '../widgets/components/reusable_textfield.dart';
+
 import 'package:flutter/cupertino.dart';
->>>>>>> develop:lib/src/screens/register_screen.dart
+
 import 'package:remedi_kopo/remedi_kopo.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -86,7 +83,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   // const Padding(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   // padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   // ),
                   Container(
@@ -104,19 +100,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                       controller: authController.emailController,
                       hintText: "예: ttangkkeus12@naver.com",
-=======
-                  //   padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
-                  // ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    width: currentWdith / 1.65,
-                    // width: 235.0,
-                    // height: 40.0,
-                    child: ReusableTextField(
-                      controller: useridController,
-
-                      hintText: "예: ttangkkeus12",
->>>>>>> develop:lib/src/screens/register_screen.dart
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
                       // helperMaxLines: 1,
@@ -124,11 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
                   Container(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                     width: currentWidth / 3.8,
-=======
-                    width: currentWdith / 3.8,
->>>>>>> develop:lib/src/screens/register_screen.dart
                     // height: 50.0,
                     // child: Expanded(
                     child: OutlinedButton(
@@ -142,11 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                           currentWidth / 1.9,
-=======
-                          currentWdith / 1.9,
->>>>>>> develop:lib/src/screens/register_screen.dart
                           currentHeight / 17.5,
                         ),
                       ),
@@ -195,7 +170,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   key: ValueKey(4),
                   controller: authController.passwordController,
                   validator: (value) {
@@ -204,9 +178,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                     return null;
                   },
-=======
-                  controller: authController.passwordController,
->>>>>>> develop:lib/src/screens/register_screen.dart
                   hintText: "비밀번호를 입력해주세요.",
                 ),
               ),
@@ -241,10 +212,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   key: ValueKey(5),
-=======
->>>>>>> develop:lib/src/screens/register_screen.dart
                   controller: confirmpasswordController,
                   validator: (value) {
                     if (authController.passwordController !=
@@ -253,11 +221,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                     return null;
                   },
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   hintText: "비밀번호를 한번 더 입력해주세요.",
-=======
-                  hintText: "비밀번호를 입력해주세요.",
->>>>>>> develop:lib/src/screens/register_screen.dart
                 ),
               ),
 
@@ -292,12 +256,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   key: ValueKey(6),
                   controller: authController.NameController,
-=======
-                  controller: NameEditingController,
->>>>>>> develop:lib/src/screens/register_screen.dart
                   validator: (value) {
                     if (value!.isEmpty) {
                       return ("Name cannot be Empty");
@@ -339,7 +299,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   key: ValueKey(7),
                   controller: authController.emailController,
                   validator: (value) {
@@ -351,12 +310,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: "예: ttangkkeus12@ttangkeus.com",
                 ),
               ),*/
-=======
-                  controller: authController.emailController,
-                  hintText: "예: ttangkkeus12@ttangkeus.com",
-                ),
-              ),
->>>>>>> develop:lib/src/screens/register_screen.dart
               const SizedBox(height: 50.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -389,19 +342,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   ),
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   SizedBox(
                     width: currentWidth / 1.9,
                     // height: 35.0,
                     child: ReusableTextField(
                       key: ValueKey(8),
                       controller: authController.PhoneNumberController,
-=======
-                  Container(
-                    width: currentWdith / 1.9,
-                    // height: 35.0,
-                    child: ReusableTextField(
->>>>>>> develop:lib/src/screens/register_screen.dart
                       hintText: "'-'없이 숫자만",
                       // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
                       // hintMaxLines: 1,
@@ -409,13 +355,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   SizedBox(
                     width: currentWidth / 2.9,
-=======
-                  Container(
-                    width: currentWdith / 2.9,
->>>>>>> develop:lib/src/screens/register_screen.dart
                     // width: 140.0,
                     // height: 35.0,
                     // child: Expanded(
@@ -430,11 +371,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                           currentWidth / 1.9,
-=======
-                          currentWdith / 1.9,
->>>>>>> develop:lib/src/screens/register_screen.dart
                           currentHeight / 17.5,
                         ),
                       ),
@@ -459,7 +396,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
                   ),
                   Container(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                     width: currentWidth / 1.9,
                     // height: 35.0,
                     child: ReusableTextField(
@@ -471,18 +407,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
                   SizedBox(
                     width: currentWidth / 2.9,
-=======
-                    width: currentWdith / 1.9,
-                    // height: 35.0,
-                    child: ReusableTextField(
-                        // hintText: "'-'없이 숫자만",
-                        // helperText: "6자 이상의 영문 혹은 영문과 숫자를 조합",
-                        ),
-                  ),
-                  const Padding(padding: EdgeInsets.fromLTRB(10, 10, 0, 0)),
-                  Container(
-                    width: currentWdith / 2.9,
->>>>>>> develop:lib/src/screens/register_screen.dart
                     // height: 35.0,
                     // child: Expanded(
                     child: OutlinedButton(
@@ -496,11 +420,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         elevation: 0.0,
                         shadowColor: Colors.transparent,
                         minimumSize: Size(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                           currentWidth / 1.9,
-=======
-                          currentWdith / 1.9,
->>>>>>> develop:lib/src/screens/register_screen.dart
                           currentHeight / 17.5,
                         ),
                       ),
@@ -549,7 +469,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: currentWidth,
                 // height: 35.0,
                 child: ReusableTextField(
-<<<<<<< HEAD:lib/app/src/screens/register/register_screen.dart
                   key: ValueKey(7),
                   controller: authController.addressController,
                   onTap: () async {
@@ -566,23 +485,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   hintText: '도로명, 지번, 건물명 검색',
                   suffixIcon: LineIcon(Icons.search),
-=======
-                  onTap: () async {
-                    KopoModel model = await Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (context) => RemediKopo(),
-                      ),
-                    );
-                    print(model.toJson());
-                    setState(() {
-                      addressJSON =
-                          '${model.address} ${model.buildingName}${model.apartment == 'Y' ? '아파트' : ''}${model.zonecode}';
-                    });
-                  },
-                  hintText: '도로명, 지번, 건물명 검색',
-                  suffixicon: LineIcon(Icons.search),
->>>>>>> develop:lib/src/screens/register_screen.dart
                 ),
               ),
               Text('$addressJSON'), // textfiled 안에 넣어야하는데 에러뜸

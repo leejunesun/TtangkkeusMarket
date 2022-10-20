@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ttangkkeusmarket/control/auth_cotrol.dart';
+import 'package:ttangkkeusmarket/app/src/cloud_functions/auth_control.dart';
 
 enum AuthStatus {
   successful,
