@@ -29,6 +29,10 @@ class AuthService {
   Future<User?> createUserWithEmailAndPassword({
     required String email,
     required String password,
+<<<<<<< HEAD:lib/app/src/cloud_functions/auth_service.dart
+=======
+    required String username,
+>>>>>>> develop:lib/src/cloud_functions/auth_service.dart
   }) async {
     final Credential = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,

@@ -45,7 +45,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       centerTitle: center,
       title: Text(
+<<<<<<< HEAD:lib/app/src/widgets/base_appbar.dart
         title,
+=======
+        "$title",
+>>>>>>> develop:lib/src/widgets/base_appbar.dart
         style: const TextStyle(
             color: Colors.black,
             fontFamily: 'SF',

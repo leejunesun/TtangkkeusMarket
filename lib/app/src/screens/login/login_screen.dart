@@ -88,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
+<<<<<<< HEAD:lib/app/src/screens/login/login_screen.dart
           Container(
             margin: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
             child: Form(
@@ -109,6 +110,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 hintText: "비밀번호를 입력해주세요.",
               ),
+=======
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+            child: TextFormField(
+              controller: authController.loginPasswordContorller,
+              obscureText: true,
+              validator: (value) {
+                RegExp regex = RegExp(r'^.{6,}$');
+                if (value!.isEmpty) {
+                  return ("Password is required for login");
+                }
+                if (!regex.hasMatch(value)) {
+                  return ("Enter Valid Password(Min. 6 Character");
+                }
+              },
+              onSaved: (value) {
+                authController.loginPasswordContorller.text = value!;
+              },
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                          color: Color(0xFFA2A7B9), width: 1.0),
+                      borderRadius: BorderRadius.circular(5.0)),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 1.0)),
+                  hintText: "비밀번호를 입력해주세요."),
+>>>>>>> develop:lib/src/screens/login_screen.dart
             ),
           ),
           //SizedBox(
@@ -123,8 +151,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     authController.LoginUSER();
+<<<<<<< HEAD:lib/app/src/screens/login/login_screen.dart
 
                     Navigator.pushReplacementNamed(context, '/');
+=======
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MypageScreen()));
+>>>>>>> develop:lib/src/screens/login_screen.dart
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color(

@@ -46,6 +46,7 @@ dependencies:
   get: ^4.6.5
   shared_preferences: ^2.0.15
   fluttertoast: ^8.0.9
+<<<<<<< HEAD
   google_maps_flutter: ^2.1.7
   geolocator: ^9.0.1
   location: ^4.4.0
@@ -56,6 +57,13 @@ dependencies:
   firebase_storage: ^10.2.18
   remedi_kopo: ^0.0.1
   flutter_image_compress: ^1.1.0
+=======
+  firebase_storage: ^10.2.17
+  flutter_image_compress: ^1.0.0-nullsafety
+  image_picker: ^0.8.5+3
+  
+  remedi_kopo: ^0.0.1
+>>>>>>> develop
 
 dev_dependencies:
   flutter_test:
